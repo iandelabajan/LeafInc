@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('test') {
       steps {
-        bat 'sh ian@127.0.0.1'
+        bat 'ssh ian@127.0.0.1'
       }
     }
   }
