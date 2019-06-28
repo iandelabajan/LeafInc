@@ -8,9 +8,8 @@ pipeline {
     }
     stage('error') {
       steps {
-        sh '''ssh ian@127.0.0.1
-pwd
-ls'''
+        bat 'ssh ian@127.0.0.1'
+        bat 'ls'
       }
     }
   }
