@@ -6,9 +6,11 @@ pipeline {
         echo 'hello'
       }
     }
-    stage('') {
+    stage('error') {
       steps {
-        bat 'ssh ian@127.0.0.1'
+        sh '''ssh ian@127.0.0.1
+pwd
+ls'''
       }
     }
   }
