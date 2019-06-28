@@ -6,9 +6,9 @@ pipeline {
         echo 'hello'
       }
     }
-    stage('ansible') {
+    stage('') {
       steps {
-        ansiblePlaybook(playbook: 'ansible', credentialsId: 'ian')
+        bat 'ssh ian@127.0.0.1'
       }
     }
   }
