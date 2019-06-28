@@ -1,12 +1,4 @@
 pipeline {
-  environment {
-     remote = [:]
-     remote.name = 'test'
-  remote.host = '127.0.0.1'
-  remote.user = 'ian'
-  remote.password = 'devops'
-  remote.allowAnyHosts = true
-   }
   agent any
   stages {
     stage('test') {
@@ -15,7 +7,12 @@ pipeline {
       }
     }
     stage('Remote SSH') {
-    sshCommand remote: remote, command: "ls -lrt"
+    steps{
+        sshagent(credentials : ['ansibleId']) {
+            sh 'pwd'
+        }
+    }
   }
+    
   }
 }
