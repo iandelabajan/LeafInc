@@ -6,9 +6,9 @@ pipeline {
 
   }
   stages {
-    stage('SSH') {
+    stage('test') {
       steps {
-        bat 'start cmd.exe ssh unixuser@127.0.0.1 ; pwd ; ls '
+        bat 'start cmd.exe ssh ian@127.0.0.1'
       }
     }
   }
